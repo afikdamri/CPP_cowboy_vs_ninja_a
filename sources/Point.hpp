@@ -3,16 +3,15 @@ namespace ariel
     class Point
     {
     private:
-        double x_;
-        double y_;
+        double posX_;
+        double posY_;
 
     public:
-        Point(double x, double y) : x_(x), y_(y) {}
+        Point(double posX, double posY);
         double distance(Point point) const;
-        double getx() const;
-        double gety() const;
+        double getX() const;
+        double getY() const;
         void print() const;
-
         Point moveTowards(const Point &source, const Point &destination, double distance);
     };
 }

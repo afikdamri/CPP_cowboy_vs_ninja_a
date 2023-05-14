@@ -3,15 +3,15 @@ using namespace std;
 
 namespace ariel
 {
-    Character::Character(string charName, int initialHitPoints, Point charLocation)
-        : name_(charName), hitPoints_(initialHitPoints), location_(charLocation) {}
+    Character::Character(const string &name, const Point &location, int hitPoints)
+        : name_(name), hitPoints_(hitPoints), location_(location) {}
 
-    bool Character::isAlive()
+    bool Character::isAlive() const
     {
         return hitPoints_ > 0;
     }
 
-    double Character::distance(Character *otherCharacter)
+    double Character::distance(const Character *otherCharacter) const
     {
         return location_.distance(otherCharacter->location_);
     }
@@ -21,28 +21,28 @@ namespace ariel
         hitPoints_ -= amount;
     }
 
-    string Character::getName()
+    std::string Character::getName() const
     {
         return name_;
     }
 
-    Point Character::getLocation()
+    Point Character::getLocation() const
     {
         return location_;
     }
 
-    void Character::print()
+    void Character::print() const
     {
-        cout << "Name: " << name_ << endl;
+        std::cout << "Name: " << name_ << std::endl;
         if (isAlive())
         {
-            cout << "Hit Points: " << hitPoints_ << endl;
-            cout << "Location: (" << location_.getx() << ", " << location_.gety() << ")" << endl;
+            std::cout << "Hit Points: " << hitPoints_ << std::endl;
+            std::cout << "Location: (" << location_.getX() << ", " << location_.getY() << ")" << std::endl;
         }
         else
         {
-            cout << "Character is dead." << endl;
-            cout << "Location: (" << location_.getx() << ", " << location_.gety() << ")" << endl;
+            std::cout << "Character is dead." << std::endl;
+            std::cout << "Location: (" << location_.getX() << ", " << location_.getY() << ")" << std::endl;
         }
     }
 }
