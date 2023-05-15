@@ -134,7 +134,6 @@ TEST_CASE("Test no 16: Battle between two teams")
     // Team 1 attacks Team 2
     team1.attack(&team2);
 
-    // Check the number of characters alive in each team
     CHECK(team1.stillAlive() == 3);
     CHECK(team2.stillAlive() == 1);
 }
@@ -145,13 +144,10 @@ TEST_CASE("Test no 17: Check if the leader of a team changes after the leader is
     Cowboy cowboy2("Alice", Point(1.0, 1.0));
     Cowboy cowboy3("Mike", Point(2.0, 2.0));
     Team team(&cowboy1);
+
     team.add(&cowboy2);
     team.add(&cowboy3);
-
-    // The leader of Team is defeated
     cowboy1.hit(100);
-
-    // Check if a new leader is chosen
     CHECK(team.stillAlive() == 2);
 }
 
@@ -179,12 +175,9 @@ TEST_CASE("Test no 19: Battle between Trained Ninjas")
     TrainedNinja ninja1("Samantha", Point(0.0, 0.0));
     TrainedNinja ninja2("Tom", Point(3.0, 4.0));
     Team team1(&ninja1);
+
     team1.add(&ninja2);
-
-    // Ninjas attack each other
     team1.attack(&team1);
-
-    // Check the number of characters alive in the team
     CHECK(team1.stillAlive() == 2);
 }
 
