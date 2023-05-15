@@ -8,14 +8,8 @@ namespace ariel
     class TrainedNinja : public Ninja
     {
     public:
-        TrainedNinja(const std::string &name, const Point &location);
-        void print() const override;
-
-        ~TrainedNinja() override;
-        TrainedNinja(const TrainedNinja &) = default;
-        TrainedNinja &operator=(const TrainedNinja &) = default;
-        TrainedNinja(TrainedNinja &&) = default;
-        TrainedNinja &operator=(TrainedNinja &&) = default;
+        TrainedNinja(const std::string &name, const Point &location): Ninja(name, location, 100, 10){};
+        std::string print() const{return "";};
     };
 }
 

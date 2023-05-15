@@ -2,10 +2,6 @@
 #define NINJA_HPP
 
 #include "Character.hpp"
-// #include "TrainedNinja.hpp"
-// #include "YoungNinja.hpp"
-// #include "OldNinja.hpp"
-
 
 namespace ariel
 {
@@ -15,9 +11,12 @@ namespace ariel
         int speed_;
 
     public:
-        Ninja(const std::string &name, const Point &location, int hitPoints, int speed);
-        void move(const Character *enemy);
-        void slash(Character *enemy);
+        Ninja(const std::string &name, const Point &location, int hitPoints, int speed)
+            : Character(name, location, hitPoints), speed_(speed){}
+
+        void move(const Character *enemy){}
+        void slash(Character *enemy){}
     };
 }
+
 #endif

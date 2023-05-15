@@ -8,15 +8,12 @@ namespace ariel
     class OldNinja : public Ninja
     {
     public:
-        OldNinja(const std::string &name, const Point &location);
-        void print() const override;
+        OldNinja(const std::string &name, const Point &location)
+            : Ninja(name, location, 100, 10){}
 
-        OldNinja() = default;
-        OldNinja(const OldNinja &) = default;
-        OldNinja &operator=(const OldNinja &) = default;
-        OldNinja(OldNinja &&) = default;
-        OldNinja &operator=(OldNinja &&) = default;
-        ~OldNinja() override;
+        std::string print() const
+        {return "";}
     };
 }
+
 #endif

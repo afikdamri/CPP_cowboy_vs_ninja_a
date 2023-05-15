@@ -18,21 +18,19 @@ namespace ariel
         std::vector<Character *> fighters_;
         Character *leader_;
 
-        Character *findClosestLivingCharacter(const Character *character, const std::vector<Character *> &characters) const;
-        void chooseNewLeader();
+        Character *findCharacter(const Character *character, const std::vector<Character *> &characters) const
+        {return nullptr;}
+
+        void chooseNewLeader(){}
 
     public:
-        Team(Character *leader);
-        void add(Character *fighter);
-        void attack(Team *enemyTeam);
-        int stillAlive() const;
-        void print() const;
-        
-        ~Team() = default;
-        Team(const Team &) = default;
-        Team &operator=(const Team &) = default;
-        Team(Team &&) = default;
-        Team &operator=(Team &&) = default;
+        Team(Character *leader) : leader_(leader){}
+
+        void add(Character *fighter){}
+        void attack(Team *enemyTeam){}
+        void print() const{}
+        int stillAlive() const{return 0;}
+        ~Team(){}
     };
 }
 #endif
