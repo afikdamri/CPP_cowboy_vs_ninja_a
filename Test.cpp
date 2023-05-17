@@ -62,7 +62,7 @@ TEST_CASE("Test no 8: Reload cowboy's bullets")
 
 TEST_CASE("Test no 9: Move ninja towards enemy character")
 {
-    Ninja ninja("John", Point(0.0, 0.0), 100, 10);
+    Ninja ninja("John",100, Point(0.0, 0.0), 10);
     Character enemy("Enemy", Point(2.0, 2.0), 100);
     ninja.move(&enemy);
     Point ninjaLocation = ninja.getLocation();
@@ -72,7 +72,7 @@ TEST_CASE("Test no 9: Move ninja towards enemy character")
 
 TEST_CASE("Test no 10: Slash enemy character with ninja's sword")
 {
-    Ninja ninja("John", Point(0.0, 0.0), 100, 10);
+    Ninja ninja("John",100, Point(0.0, 0.0), 10);
     Character enemy("Enemy", Point(2.0, 2.0), 100);
     ninja.slash(&enemy);
     CHECK(enemy.getHitPoints() == 90);
@@ -106,7 +106,7 @@ TEST_CASE("Test no 14: Reload cowboy's bullets and check if has bullets")
 
 TEST_CASE("Test no 15: Move ninja without enemy character")
 {
-    Ninja ninja("John", Point(0.0, 0.0), 100, 10);
+    Ninja ninja("John",100, Point(0.0, 0.0),10);
     ninja.move(nullptr);
     Point ninjaLocation = ninja.getLocation();
     CHECK(ninjaLocation.getX() == 0.0);
@@ -124,9 +124,9 @@ TEST_CASE("Test no 16: Battle between two teams")
     team1.add(&cowboy3);
 
     // Create Team 2
-    Ninja ninja1("Samantha", Point(5.0, 5.0), 100, 10);
-    Ninja ninja2("Tom", Point(6.0, 6.0), 100, 10);
-    Ninja ninja3("Emma", Point(7.0, 7.0), 100, 10);
+    Ninja ninja1("Samantha",100, Point(5.0, 5.0),10);
+    Ninja ninja2("Tom",100, Point(6.0, 6.0),10);
+    Ninja ninja3("Emma",100, Point(7.0, 7.0),10);
     Team team2(&ninja1);
     team2.add(&ninja2);
     team2.add(&ninja3);
@@ -154,7 +154,7 @@ TEST_CASE("Test no 17: Check if the leader of a team changes after the leader is
 TEST_CASE("Test no 18: Print information about characters in a team")
 {
     Cowboy cowboy("John", Point(0.0, 0.0));
-    Ninja ninja("Samantha", Point(2.0, 2.0), 100, 10);
+    Ninja ninja("Samantha",100, Point(2.0, 2.0),10);
     Team team(&cowboy);
     team.add(&ninja);
 

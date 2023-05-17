@@ -9,17 +9,17 @@ namespace ariel
     public:
         Point(double posX, double posY) : posX_(posX), posY_(posY) {}
 
-        double distance(const Point &point) const
+        double static distance(const Point &point) 
         {return 0.0;}
 
-        double getX() const
+        double static getX()
         {return 0.0;}
 
-        double getY() const
+        double static getY()
         {return 0.0;}
 
-        void print() const{}
-        Point moveTowards(const Point &source, const Point &destination, double distance)
+        void static print(){}
+        Point static moveTowards(const Point &source, double distance, const Point &destination)
         {return Point(0.0, 0.0);}
     };
 }

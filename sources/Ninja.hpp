@@ -11,7 +11,7 @@ namespace ariel
         int speed_;
 
     public:
-        Ninja(const std::string &name, const Point &location, int hitPoints, int speed)
+        Ninja(const std::string &name, int hitPoints, const Point &location, int speed)
             : Character(name, location, hitPoints), speed_(speed){}
 
         void move(const Character *enemy){}

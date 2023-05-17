@@ -9,17 +9,17 @@ namespace ariel
     {
     private:
         int bullets_;
-
+        static constexpr int DEFAULT_BULLETS = 6;
     public:
         Cowboy(const std::string &name, const Point &location)
-            : Character(name, location, 0), bullets_(6){}
+            : Character(name, location, 0), bullets_(DEFAULT_BULLETS){}
         void shoot(Character *enemy){}
 
-        bool hasBullets() const
+        bool static hasBullets()
         {return false;}
 
         void reload(){}
-        std::string print() const
+        std::string static print()
         {return "";}
     };
 }

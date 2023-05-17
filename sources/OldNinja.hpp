@@ -7,11 +7,14 @@ namespace ariel
 {
     class OldNinja : public Ninja
     {
+    private:
+        static constexpr int DEFAULT_SPPED = 8; 
+        static constexpr int DEFAULT_DAMAGE = 150;
     public:
         OldNinja(const std::string &name, const Point &location)
-            : Ninja(name, location, 100, 10){}
+            : Ninja(name, DEFAULT_DAMAGE, location, DEFAULT_SPPED){}
 
-        std::string print() const
+        std::string static print()
         {return "";}
     };
 }

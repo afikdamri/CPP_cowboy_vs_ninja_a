@@ -18,7 +18,7 @@ namespace ariel
         std::vector<Character *> fighters_;
         Character *leader_;
 
-        Character *findCharacter(const Character *character, const std::vector<Character *> &characters) const
+        Character static *findCharacter(const Character *character, const std::vector<Character *> &characters)
         {return nullptr;}
 
         void chooseNewLeader(){}
@@ -29,8 +29,13 @@ namespace ariel
         void add(Character *fighter){}
         void attack(Team *enemyTeam){}
         void print() const{}
-        int stillAlive() const{return 0;}
-        ~Team(){}
+        int static stillAlive(){return 0;}
+
+        ~Team(){};
+        Team(const Team&) = delete; // Delete copy constructor
+        Team& operator=(const Team&) = delete; // Delete copy assignment operator
+        Team(Team&&) = delete; // Delete move constructor
+        Team& operator=(Team&&) = delete; // Delete move assignment operator
     };
 }
 #endif

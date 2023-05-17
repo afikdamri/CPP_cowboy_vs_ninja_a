@@ -18,25 +18,30 @@ namespace ariel
         Character(const std::string &name, const Point &location, int hitPoints)
             : name_(name), hitPoints_(hitPoints), location_(location){}
 
-        bool isAlive() const
+        bool static isAlive()
         {return false;}
 
-        double distance(const Character *other) const
+        double static distance(const Character *other)
         {return 0.0;}
 
         void hit(int amount){}
 
-        std::string getName() const
+        std::string static getName()
         {return "";}
 
-        Point getLocation() const
+        Point static getLocation()
         {return Point(0.0, 0.0);}
 
-        int getHitPoints() const{return -1;}
+        int static getHitPoints(){return -1;}
 
         void print() const{}
 
-        virtual ~Character() {}
+        ~Character(){}
+
+        Character(const Character&) = delete; // Delete copy constructor
+        Character& operator=(const Character&) = delete; // Delete copy assignment operator
+        Character(Character&&) = delete; // Delete move constructor
+        Character& operator=(Character&&) = delete; // Delete move assignment operator
     };
 }
 #endif
